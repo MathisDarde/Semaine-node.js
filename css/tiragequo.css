@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Harry P';
+    src: url('harryp__-webfont.woff2') format('woff2'),
+         url('harryp__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('images/caviardreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caviar Dreams Bold';
+    src: url('images/caviardreams_bold-webfont.woff2') format('woff2'),
+         url('images/caviardreams_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Harry P';
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+header {
+    background: #00003f;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 35px;
+    color: white;
+    margin-left: 25px;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a{
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    padding: 5px 0;
+    margin: 0 20px;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+    border-bottom-color: white;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    header {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+       position: absolute;
+       width: 100%;
+       left: 100%;
+       top: 70px;
+       width: 100%;
+       background: #00003f;
+       padding: 50px;
+       transition: 0.5s;
+    }
+
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    header .logo {
+        font-size: 30px;
+        margin-left: 5px;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    header nav {
+       position: absolute;
+       width: 100%;
+       left: -100%;
+       top: 70px;
+       width: 100%;
+       background: #00003f;
+       padding: 50px;
+       transition: 0.5s;
+    }
+
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+#maintirage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-image: url('images/poudlard-chateau.avif');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+#maintirage .global-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+        z-index: 1;
+}
+
+#maintirage p {
+    font-size: 55px;
+    text-align: center;
+    padding: 55px 0;
+    color: white;
+}
+
+#maintirage img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+#maintirage img:hover {
+transform: scale(1.10);
+transition: 0.3s ease-in-out;
+}
+
+.card-container {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    margin: 25px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #3498db;
+}
+
+.card-back {
+    background-color: #2ecc71;
+    transform: rotateY(180deg);
+}
+
+.card-container2 {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    margin: 25px;
+}
+.card-container3 {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    margin: 25px;
+}
+.card-container4 {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    margin: 25px;
+}
+.card-container5 {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    margin: 25px;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#maintirage button {
+    font-size: 35px;
+    padding: 15px;
+    border-radius: 5px;
+    background: white;
+    color: #00003f;
+    cursor: pointer;
+}
+
+#maintirage button:hover {
+    background: #00003f;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
